@@ -29,7 +29,7 @@ end
 if build_hiredis
   # Make sure hiredis is built...
   Dir.chdir(hiredis_dir) do
-    success = system("#{make_program} static")
+    success = system("#{make_program} static USE_SSL=1")
     raise "Building hiredis failed" if !success
   end
 
